@@ -15,6 +15,10 @@
   --muted: #4c5d6c;
   --line: #cad7dd;
 }
+:root[data-theme="light"] .logo,
+:root[data-theme="light"] .logo span {
+  text-shadow: none;
+}
 
 * {
   box-sizing: border-box;
@@ -23,9 +27,21 @@
 
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at top right, rgba(200, 255, 32, 0.1), transparent 25%),
-    var(--bg);
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(
+      rgba(7, 16, 24, 0.9),
+      rgba(7, 16, 24, 0.94)
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(200, 255, 32, 0.12),
+      transparent 30%
+    ),
+    url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=85");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -152,7 +168,6 @@ h2 {
   border: 2px solid var(--lime);
   border-radius: 14px;
   background: var(--panel);
-  box-shadow: 9px 9px 0 var(--orange);
   font-size: clamp(2.7rem, 6vw, 5.4rem);
   line-height: 1.08;
   letter-spacing: -0.07em;
@@ -584,4 +599,267 @@ footer,
   .section-label {
     font-size: 0.95rem;
   }
+}
+.skill-level {
+  width: 100%;
+  height: 9px;
+  overflow: hidden;
+  margin-top: 22px;
+  border-radius: 20px;
+  background: var(--line);
+}
+
+.skill-level span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--lime);
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(70px) scale(0.97);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.project-modal {
+  animation: modalAppear 0.35s ease-out;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.logo {
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  line-height: 1.2;
+}
+
+.logo span {
+  font-size: 3.2rem;
+}
+.social-links a,
+.footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-links svg {
+  font-size: 1.2rem;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-socials svg {
+  font-size: 1rem;
+}
+:root[data-theme="light"] {
+  --lime: #386b00;
+  --orange: #a63b00;
+}
+
+:root[data-theme="light"] .logo {
+  color: #10202d;
+  text-shadow:
+    2px 2px 0 #51b8dc,
+    5px 5px 0 #d95b00;
+}
+
+:root[data-theme="light"] .logo span {
+  color: #0077a8;
+}
+
+:root[data-theme="light"] .project-content h3 {
+  background: #386b00;
+  color: white;
+}
+
+:root[data-theme="light"] .primary-button {
+  background: #386b00;
+  border-color: #386b00;
+  color: white;
+}
+.back-to-top {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  z-index: 30;
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--lime);
+  border-radius: 50%;
+  background: var(--panel);
+  color: var(--lime);
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+  background: var(--lime);
+  color: #091008;
+}
+:root[data-theme="light"] .logo {
+  text-shadow: 2px 2px 0 #000203 !important;
+}
+
+:root[data-theme="light"] .logo span {
+  text-shadow: 0 0 8px #000303 !important;
+}
+:root[data-theme="light"] .logo,
+:root[data-theme="light"] .logo span {
+  text-shadow: none !important;
+}
+:root[data-theme="light"] body {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(
+      rgba(8, 42, 48, 0.56),
+      rgba(244, 247, 246, 0.68)
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(56, 107, 0, 0.1),
+      transparent 30%
+    ),
+    url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=85");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+/* Midnight Circuit — Electrical & Electronics Engineering theme */
+
+:root {
+  --bg: #06131f;
+  --panel: #0c202e;
+  --text: #eaf6ff;
+  --muted: #a9c0d0;
+  --lime: #2de2e6;   /* Electric cyan */
+  --orange: #ffb703; /* Signal amber */
+  --line: #1d3a4c;
+}
+
+:root[data-theme="light"] {
+  --bg: #eaf2f8;
+  --panel: #f9fcff;
+  --text: #092235;
+  --muted: #496476;
+  --lime: #007c91;   /* Deep teal */
+  --orange: #d97706; /* Copper amber */
+  --line: #b8cad6;
+}
+
+/* Dark mode: subtle circuit-board background */
+body {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(6, 19, 31, 0.84), rgba(6, 19, 31, 0.92)),
+    radial-gradient(circle at top right, rgba(45, 226, 230, 0.13), transparent 32%),
+    url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=85");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Light mode: visible, but softly blended circuit-board background */
+:root[data-theme="light"] body {
+  background-image:
+    linear-gradient(rgba(65, 106, 138, 0.55), rgba(30, 69, 99, 0.72)),
+    radial-gradient(circle at top right, rgba(0, 124, 145, 0.12), transparent 32%),
+    url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=85");
+}
+
+/* Brand details */
+.logo {
+  color: var(--text);
+  text-shadow: 2px 2px 0 #0f272b, 5px 5px 0 #06131f;
+}
+
+.logo span {
+  color: var(--lime);
+  text-shadow: 0 0 12px rgba(45, 226, 230, 0.7);
+}
+
+.initial-badge {
+  border-color: var(--lime);
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: 0 0 12px rgba(31, 183, 186, 0.55), 4px 4px 0 var(--orange);
+}
+
+.primary-button {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: #03141b;
+}
+
+.project-content h3 {
+  background: var(--lime);
+  color: #03141b;
+}
+
+:root[data-theme="light"] .logo,
+:root[data-theme="light"] .logo span {
+  color: var(--text);
+  text-shadow: none !important;
+}
+
+:root[data-theme="light"] .primary-button,
+:root[data-theme="light"] .project-content h3 {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: white;
+}
+/* Clearer navigation over the background image */
+
+.nav-links {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  background: rgba(6, 19, 31, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.nav-links a {
+  color: var(--text);
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.nav-links a:hover {
+  color: var(--lime);
+}
+
+:root[data-theme="light"] .nav-links {
+  background: rgba(249, 252, 255, 0.82);
+}
+
+:root[data-theme="light"] .nav-links a {
+  text-shadow: none;
 }
