@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import Hero from "./components/Hero";
+import Skills from "./components/Skills";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import Explore from "./Explore";
 import "./index.css";
@@ -165,61 +167,11 @@ function HomePage({ theme, toggleTheme }) {
         </div>
       </section>
 
-      <section className="about-section reveal" id="about">
-        <p className="section-label">01 — ABOUT ME</p>
+      <Hero />
 
-        <div className="about-content">
-          <h2>
-            Engineering ideas into <span>meaningful experiences.</span>
-          </h2>
+      
 
-          <div>
-            <p>
-              I enjoy turning difficult problems into clean, interactive
-              websites. My current focus is Electrical and Electronics Engineering, React, modern web development, and
-              responsive user interfaces.
-            </p>
-            <p>
-              I am continuously building projects, learning new tools, and
-              improving my skills as a developer.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="skills-section reveal" id="skills">
-        <p className="section-label">02 — SKILLS & TOOLS</p>
-        <h2>My development toolkit.</h2>
-
-        <div className="skills-grid">
-         <article>
-           <span>01</span>
-           <h3>Frontend</h3>
-           <p>HTML, CSS, JavaScript, React</p>
-           <div className="skill-level">
-             <span style={{ width: "85%" }}></span>
-           </div>
-         </article>
-        
-         <article>
-           <span>02</span>
-           <h3>Tools</h3>
-           <p>Git, GitHub, VS Code, Vite, Figma</p>
-           <div className="skill-level">
-             <span style={{ width: "75%" }}></span>
-           </div>
-         </article>
-        
-         <article>
-           <span>03</span>
-           <h3>Currently Learning</h3>
-           <p>APIs, Node.js, UI Design, Deployment</p>
-           <div className="skill-level">
-             <span style={{ width: "60%" }}></span>
-           </div>
-         </article>
-        </div>
-      </section>
+      <Skills /> 
 
       <section className="contact-section" id="contact">
         <p className="section-label">03 — CONTACT</p>
