@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import SiteNav from "../components/SiteNav";
 
 const projects = [
   {
@@ -12,7 +12,6 @@ const projects = [
     image:
       "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=900&q=80",
     github: "https://github.com/Jason18-oa",
-    demo: "#contact",
   },
   {
     number: "02",
@@ -25,31 +24,13 @@ const projects = [
     image:
       "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=80",
     github: "https://github.com/Jason18-oa",
-    demo: "#contact",
   },
 ];
 
 function Explore({ theme, toggleTheme }) {
   return (
     <main>
-      <nav className="navbar">
-        <Link
-          to="/"
-          className="initial-badge"
-          title="Back to homepage"
-          aria-label="Back to homepage"
-        >
-          SEA
-        </Link>
-
-        <button className="theme-button" onClick={toggleTheme}>
-          {theme === "dark" ? "☀ Light" : "◐ Dark"}
-        </button>
-
-        <div className="nav-links">
-          <Link to="/">Home</Link>
-        </div>
-      </nav>
+      <SiteNav theme={theme} toggleTheme={toggleTheme} />
 
       <section className="projects-section">
         <p className="section-label">PROJECTS — ENGINEERING & DEVELOPMENT</p>
@@ -87,3 +68,5 @@ function Explore({ theme, toggleTheme }) {
 }
 
 export default Explore;
+
+
