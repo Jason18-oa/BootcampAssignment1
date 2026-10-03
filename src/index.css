@@ -131,7 +131,7 @@ h2 {
   border: 2px solid var(--lime);
   border-radius: 14px;
   background: var(--panel);
-  font-size: clamp(2.7rem, 6vw, 5.4rem);
+  font-size: clamp(2rem, 4.5vw, 4rem);
   line-height: 1.08;
   letter-spacing: -0.07em;
 }
