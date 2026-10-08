@@ -1,169 +1,15 @@
 import { useEffect, useState } from "react";
 import {
   BrowserRouter,
-  Link,
   Route,
   Routes,
   useLocation,
 } from "react-router-dom";
-import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import SiteNav from "./components/SiteNav";
 import About from "./pages/about";
-import Skills from "./pages/Skills";
 import Explore from "./pages/Explore";
-
-const PROFILE = {
-  email: "asantemanuel19@gmail.com",
-  github: "https://github.com/Jason18-oa",
-  linkedin: "https://www.linkedin.com/in/emmanuel-sekyi-6b9976411",
-  whatsapp: "https://wa.me/233530146814",
-};
-
-function HomePage({ theme, toggleTheme }) {
-  const [sent, setSent] = useState(false);
-  const [showTopButton, setShowTopButton] = useState(false);
-
-  useEffect(() => {
-    function handleScroll() {
-      setShowTopButton(window.scrollY > 450);
-    }
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  function handleContactSubmit(event) {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const message = formData.get("message");
-    const subject = encodeURIComponent(`Portfolio message from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    );
-
-    window.location.href = `mailto:${PROFILE.email}?subject=${subject}&body=${body}`;
-    setSent(true);
-    event.currentTarget.reset();
-  }
-
-  return (
-    <main>
-      <SiteNav theme={theme} toggleTheme={toggleTheme} />
-      <section className="hero" id="home">
-        <a href="#home" className="logo">
-          <span></span> Hello, I'm Sekyi Emmanuel
-        </a>
-        
-        <p className="signal-text">● AVAILABLE FOR NEW PROJECTS</p>
-        <p>
-        </p>
-        <h1>
-        
-          Engineering ideas into <span>real-world solutions.</span>
-        </h1>
-        <p>
-        </p>
-    
-        <div className="hero-actions">
-          <Link to="/projects" className="primary-button">
-            Explore my work ↗
-          </Link>
-          <a
-            href="/Emmanuel-Sekyi-CV.pdf"
-            download
-            className="secondary-button"
-          >
-            Download CV ↓
-          </a>
-        </div>
-        <div className="connect-menu">
-          <button className="primary-button" type="button" aria-haspopup="true">
-            Connect with me ↗
-          </button>
-
-          <div className="social-links connect-options">
-            <a href={PROFILE.github} target="_blank" rel="noreferrer">
-              <FaGithub /> GitHub
-            </a>
-            <a href={PROFILE.linkedin} target="_blank" rel="noreferrer">
-              <FaLinkedin /> LinkedIn
-            </a>
-            <a href={PROFILE.whatsapp} target="_blank" rel="noreferrer">
-              <FaWhatsapp /> WhatsApp
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section className="contact-section" id="contact">
-        <p className="section-label"> CONTACT ME</p>
-        <h2>Have an idea worth building?</h2>
-        <form className="contact-form" onSubmit={handleContactSubmit}>
-          <input
-            name="name"
-            placeholder="Your name"
-            aria-label="Your name"
-            autoComplete="name"
-            required
-          />
-          <input
-            name="email"
-            type="email"
-            placeholder="Your email"
-            aria-label="Your email"
-            autoComplete="email"
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="Tell me about your idea..."
-            aria-label="Your message"
-            rows="5"
-            required
-          />
-          <button type="submit" className="primary-button">
-            Send message ↗
-          </button>
-          {sent && (
-            <p className="form-note" aria-live="polite">
-              Your email application should now be open. Send the message from
-              there.
-            </p>
-          )}
-        </form>
-
-      </section>
-
-      {showTopButton && (
-        <button
-          className="back-to-top"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          aria-label="Back to top"
-        >
-          ↑
-        </button>
-      )}
-
-      <footer>
-        <p>© 2026 S.Emmanuel Asante. Built with determination.</p>
-
-      </footer>
-    </main>
-  );
-}
-
-function ContentPage({ theme, toggleTheme, children }) {
-  return (
-    <main>
-      <SiteNav theme={theme} toggleTheme={toggleTheme} />
-      {children}
-      <footer>
-        <p>© 2026 Portfolio Of Sekyi Emmanuel Asante. Built with determination.</p>
-      </footer>
-    </main>
-  );
-}
+import Home from "./pages/Home";
+import Skills from "./pages/Skills";
+import PageLayout from "./components/PageLayout";
 
 function ScrollManager() {
   const { pathname, hash } = useLocation();
@@ -203,22 +49,22 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<HomePage theme={theme} toggleTheme={toggleTheme} />}
+          element={<Home theme={theme} toggleTheme={toggleTheme} />}
         />
         <Route
           path="/about"
           element={
-            <ContentPage theme={theme} toggleTheme={toggleTheme}>
+            <PageLayout theme={theme} toggleTheme={toggleTheme}>
               <About />
-            </ContentPage>
+            </PageLayout>
           }
         />
         <Route
           path="/skills"
           element={
-            <ContentPage theme={theme} toggleTheme={toggleTheme}>
+            <PageLayout theme={theme} toggleTheme={toggleTheme}>
               <Skills />
-            </ContentPage>
+            </PageLayout>
           }
         />
         <Route
