@@ -569,6 +569,172 @@ footer,
   gap: 18px;
 }
 
+.tech-projects-section {
+  width: min(1120px, calc(100% - 36px));
+  margin: 0 auto;
+  padding: 52px 0 80px;
+}
+
+.tech-projects-section > h2 {
+  margin-bottom: 28px;
+}
+
+.tech-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.tech-project-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tech-project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--lime);
+  box-shadow: 0 0 16px rgba(45, 226, 230, 0.2);
+}
+
+.tech-project-card > img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: #06152b;
+  border-bottom: 2px solid var(--lime);
+}
+
+.tech-project-content {
+  display: flex;
+  min-height: 225px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 18px;
+}
+
+.tech-project-number {
+  margin: 0 0 5px;
+  color: var(--orange);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.tech-project-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+}
+
+.tech-project-content > p:not(.tech-project-number) {
+  flex: 1;
+  margin: 0 0 18px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.tech-project-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  border: 1px solid var(--lime);
+  padding: 8px 14px;
+  color: var(--lime);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tech-project-link:hover {
+  background: var(--lime);
+  color: #091008;
+}
+
+.tech-project-link.is-unconfigured {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.soft-skills-group {
+  margin-top: 64px;
+}
+
+.soft-skills-group > h3 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.soft-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 22px;
+}
+
+.soft-skill-card {
+  padding: 20px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: 6px 6px 0 rgba(255, 122, 26, 0.45);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.soft-skill-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--lime);
+}
+
+.soft-skill-card > span {
+  color: var(--lime);
+  font-weight: 700;
+}
+
+.soft-skill-image {
+  display: block;
+  width: 100%;
+  height: 180px;
+  margin-top: 12px;
+  object-fit: contain;
+  background: #06152b;
+  border: 1px solid var(--line);
+}
+
+.soft-skill-card h4 {
+  margin: 18px 0 8px;
+  font-size: 1.25rem;
+}
+
+.soft-skill-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .tech-projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .tech-projects-grid,
+  .soft-skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-project-card,
+  .soft-skill-card {
+    transition: none;
+  }
+}
+
 .footer-socials svg {
   font-size: 1rem;
 }
@@ -615,24 +781,24 @@ footer,
   --line: #b8cad6;
 }
 
-/* Dark mode: subtle circuit-board background */
+/* Dark mode: electronics lab background with the existing blue gradients */
 body {
   background-color: var(--bg);
   background-image:
-    linear-gradient(rgba(29, 97, 160, 0.84), rgba(6, 23, 40, 0.92)),
+    linear-gradient(rgba(29, 97, 160, 0.68), rgba(6, 23, 40, 0.82)),
     radial-gradient(circle at top right, rgba(45, 226, 230, 0.13), transparent 32%),
-    url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=85");
+    url("./assets/images/electronics-lab-background.png");
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
 }
 
-/* Light mode: visible, but softly blended circuit-board background */
+/* Light mode keeps its softer gradient over the electronics lab image */
 :root[data-theme="light"] body {
   background-image:
-    linear-gradient(rgba(142, 159, 173, 0.55), rgba(30, 69, 99, 0.72)),
+    linear-gradient(rgba(142, 159, 173, 0.38), rgba(30, 69, 99, 0.58)),
     radial-gradient(circle at top right, rgba(0, 124, 145, 0.12), transparent 32%),
-    url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=85");
+    url("./assets/images/electronics-lab-background.png");
 }
 
 /* Brand details */
@@ -703,11 +869,11 @@ body {
   text-shadow: none;
 }
 
-/* Keep the engineering blueprint exclusive to the hero in light mode too. */
+/* Blend the hero into the shared background without washing out light-mode text. */
 :root[data-theme="light"] .hero {
   background-image:
-    linear-gradient(rgba(234, 242, 248, 0.74), rgba(218, 234, 242, 0.84)),
-    url("./assets/images/hero-engineering-blueprint.png");
+    linear-gradient(rgba(234, 242, 248, 0.42), rgba(218, 234, 242, 0.56)),
+    url("./assets/images/electronics-lab-background.png");
 }
 
 /* Keep the greeting smaller and aligned to the left edge of the hero. */

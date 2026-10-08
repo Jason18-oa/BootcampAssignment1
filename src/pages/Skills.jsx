@@ -1,6 +1,8 @@
 import electronicsImage from "../assets/electronics-toolkit.svg";
 import frontendImage from "../assets/frontend-toolkit.svg";
 import toolsImage from "../assets/tools-toolkit.svg";
+import communicationSkillsImage from "../assets/images/soft-skills/communication-skills.png";
+import intrapersonalSkillsImage from "../assets/images/soft-skills/intrapersonal-skills.svg";
 
 export default function Skills() {
   return (
@@ -49,6 +51,40 @@ export default function Skills() {
             Currently learning: APIs, Node.js, UI design, deployment
           </p>
         </article>
+      </div>
+
+      <div className="soft-skills-group">
+        <p className="section-label">PEOPLE &amp; PERSONAL GROWTH</p>
+        <h3>Soft Skills</h3>
+        <div className="soft-skills-grid">
+          <article className="soft-skill-card">
+            <span>01</span>
+            <img
+              className="soft-skill-image"
+              src={communicationSkillsImage}
+              alt="People sharing ideas and listening to one another"
+            />
+            <h4>Communication Skills</h4>
+            <p>
+              Share ideas clearly, listen actively, and collaborate respectfully
+              with others.
+            </p>
+          </article>
+
+          <article className="soft-skill-card">
+            <span>02</span>
+            <img
+              className="soft-skill-image"
+              src={intrapersonalSkillsImage}
+              alt="Illustration representing self-awareness and personal reflection"
+            />
+            <h4>Intrapersonal Skills</h4>
+            <p>
+              Build self-awareness, reflect on strengths, and take ownership of
+              personal growth.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
   );
