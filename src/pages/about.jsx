@@ -1,20 +1,25 @@
 export default function About() {
   return (
     <section className="about-section" id="about">
-      <p className="section-label">01 — ABOUT ME</p>
+      <p className="section-label">01 — ABOUT ME</p>  
       <div className="about-content">
         <h2>
           Engineering ideas into <span>meaningful experiences.</span>
         </h2>
         <div>
+          <p className="hero-description">
+          I am an Electrical and Electronics Engineering student driven by curiosity,
+          innovation, and a passion for understanding how technology works both fundamental
+          and system levels. 
+        </p>
           <p>
-            I am studying Electrical and Electronics Engineering and building
+            I am currently building
             complementary skills in web development. I work with HTML, CSS,
             JavaScript, and React to create responsive interfaces.
           </p>
           <p>
             I am strengthening my engineering foundation through my studies
-            while learning APIs, Node.js, UI design, and deployment.
+            while learning Netlify, APIs, Node.js, UI design, and deployment.
           </p>
         </div>
       </div>

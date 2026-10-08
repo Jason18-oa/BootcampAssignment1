@@ -54,17 +54,17 @@ function HomePage({ theme, toggleTheme }) {
         <a href="#home" className="logo">
           <span></span> Hello, I'm Sekyi Emmanuel
         </a>
-        # I am a Purple Innovator 💜
+        
         <p className="signal-text">● AVAILABLE FOR NEW PROJECTS</p>
+        <p>
+        </p>
         <h1>
+        
           Engineering ideas into <span>real-world solutions.</span>
         </h1>
-        <p className="hero-description">
-          I’m studying Electrical and Electronics Engineering and building web
-          development skills with HTML, CSS, JavaScript, and React. I enjoy
-          creating useful digital experiences that connect technology and human
-          ideas.
+        <p>
         </p>
+    
         <div className="hero-actions">
           <Link to="/projects" className="primary-button">
             Explore my work ↗
@@ -77,21 +77,27 @@ function HomePage({ theme, toggleTheme }) {
             Download CV ↓
           </a>
         </div>
-        <div className="social-links">
-          <a href={PROFILE.github} target="_blank" rel="noreferrer">
-            <FaGithub /> GitHub
-          </a>
-          <a href={PROFILE.linkedin} target="_blank" rel="noreferrer">
-            <FaLinkedin /> LinkedIn
-          </a>
-          <a href={PROFILE.whatsapp} target="_blank" rel="noreferrer">
-            <FaWhatsapp /> WhatsApp
-          </a>
+        <div className="connect-menu">
+          <button className="primary-button" type="button" aria-haspopup="true">
+            Connect with me ↗
+          </button>
+
+          <div className="social-links connect-options">
+            <a href={PROFILE.github} target="_blank" rel="noreferrer">
+              <FaGithub /> GitHub
+            </a>
+            <a href={PROFILE.linkedin} target="_blank" rel="noreferrer">
+              <FaLinkedin /> LinkedIn
+            </a>
+            <a href={PROFILE.whatsapp} target="_blank" rel="noreferrer">
+              <FaWhatsapp /> WhatsApp
+            </a>
+          </div>
         </div>
       </section>
 
       <section className="contact-section" id="contact">
-        <p className="section-label">03 — CONTACT</p>
+        <p className="section-label"> CONTACT ME</p>
         <h2>Have an idea worth building?</h2>
         <form className="contact-form" onSubmit={handleContactSubmit}>
           <input
@@ -126,6 +132,7 @@ function HomePage({ theme, toggleTheme }) {
             </p>
           )}
         </form>
+
       </section>
 
       {showTopButton && (
@@ -140,17 +147,7 @@ function HomePage({ theme, toggleTheme }) {
 
       <footer>
         <p>© 2026 S.Emmanuel Asante. Built with determination.</p>
-        <div className="footer-socials">
-          <a href={PROFILE.github} target="_blank" rel="noreferrer">
-            <FaGithub /> GitHub
-          </a>
-          <a href={PROFILE.linkedin} target="_blank" rel="noreferrer">
-            <FaLinkedin /> LinkedIn
-          </a>
-          <a href={PROFILE.whatsapp} target="_blank" rel="noreferrer">
-            <FaWhatsapp /> WhatsApp
-          </a>
-        </div>
+
       </footer>
     </main>
   );
@@ -162,7 +159,7 @@ function ContentPage({ theme, toggleTheme, children }) {
       <SiteNav theme={theme} toggleTheme={toggleTheme} />
       {children}
       <footer>
-        <p>© 2026 Portfolio Of Sekyi Emmanuel Asante. Built with React.</p>
+        <p>© 2026 Portfolio Of Sekyi Emmanuel Asante. Built with determination.</p>
       </footer>
     </main>
   );

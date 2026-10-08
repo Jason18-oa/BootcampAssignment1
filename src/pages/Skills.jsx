@@ -44,7 +44,7 @@ export default function Skills() {
             alt="Developer toolbox with code and settings symbols"
           />
           <h3>Tools &amp; Ongoing Learning</h3>
-          <p>Git, GitHub, VS Code, Vite, Figma</p>
+          <p>Netlify, Git, GitHub, VS Code, Vite, Figma</p>
           <p className="skill-status">
             Currently learning: APIs, Node.js, UI design, deployment
           </p>

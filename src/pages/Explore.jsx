@@ -1,4 +1,6 @@
 import SiteNav from "../components/SiteNav";
+import smartEnergyMonitorImage from "../assets/images/smart-energy-monitor.png";
+import roboticsControlLabImage from "../assets/images/robotics-control-lab.png";
 
 const projects = [
   {
@@ -9,8 +11,7 @@ const projects = [
     details:
       "This project demonstrates how a simple dashboard can make energy data easier to understand. It focuses on clear interface design, responsive layouts, and useful information.",
     tags: ["React", "Data UI", "IoT"],
-    image:
-      "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=900&q=80",
+    image: smartEnergyMonitorImage,
     github: "https://github.com/Jason18-oa",
   },
   {
@@ -21,8 +22,7 @@ const projects = [
     details:
       "This project explores a science-and-engineering interface for robotics.",
     tags: ["JavaScript", "Engineering", "UX"],
-    image:
-      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=80",
+    image: roboticsControlLabImage,
     github: "https://github.com/Jason18-oa",
   },
 ];

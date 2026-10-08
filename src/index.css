@@ -121,6 +121,12 @@ h2 {
   padding: 100px 40px;
   border: 1px solid var(--line);
   border-top: 0;
+  background-image:
+    linear-gradient(rgba(6, 19, 31, 0.76), rgba(6, 19, 31, 0.88)),
+    url("./assets/images/hero-engineering-blueprint.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
 }
 
@@ -525,7 +531,7 @@ footer,
 .skills-section h2,
 .projects-section h2,
 .about-content h2 {
-  font-size: clamp(2.3rem, 4vw, 4rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
 }
 
 @media (max-width: 760px) {
@@ -540,12 +546,12 @@ footer,
   font-weight: 700;
 }
 .logo {
-  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-size: clamp(1.15rem, 2.2vw, 1.65rem);
   line-height: 1.2;
 }
 
 .logo span {
-  font-size: 3.2rem;
+  font-size: 2rem;
 }
 .social-links a,
 .footer-socials a {
@@ -593,7 +599,7 @@ footer,
   --bg: #06131f;
   --panel: #0c202e;
   --text: #eaf6ff;
-  --muted: #a9c0d0;
+  --muted: #647f92;
   --lime: #2de2e6;   /* Electric cyan */
   --orange: #ffb703; /* Signal amber */
   --line: #1d3a4c;
@@ -601,11 +607,11 @@ footer,
 
 :root[data-theme="light"] {
   --bg: #eaf2f8;
-  --panel: #f9fcff;
+  --panel: #e2effc;
   --text: #092235;
-  --muted: #496476;
-  --lime: #007c91;   /* Deep teal */
-  --orange: #d97706; /* Copper amber */
+  --muted: #070d10;
+  --lime: #16bcd9;   /* Deep teal */
+  --orange: #0d097b; /* Copper amber */
   --line: #b8cad6;
 }
 
@@ -613,7 +619,7 @@ footer,
 body {
   background-color: var(--bg);
   background-image:
-    linear-gradient(rgba(6, 19, 31, 0.84), rgba(6, 19, 31, 0.92)),
+    linear-gradient(rgba(29, 97, 160, 0.84), rgba(6, 23, 40, 0.92)),
     radial-gradient(circle at top right, rgba(45, 226, 230, 0.13), transparent 32%),
     url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=85");
   background-position: center;
@@ -624,7 +630,7 @@ body {
 /* Light mode: visible, but softly blended circuit-board background */
 :root[data-theme="light"] body {
   background-image:
-    linear-gradient(rgba(65, 106, 138, 0.55), rgba(30, 69, 99, 0.72)),
+    linear-gradient(rgba(142, 159, 173, 0.55), rgba(30, 69, 99, 0.72)),
     radial-gradient(circle at top right, rgba(0, 124, 145, 0.12), transparent 32%),
     url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=85");
 }
@@ -697,11 +703,18 @@ body {
   text-shadow: none;
 }
 
+/* Keep the engineering blueprint exclusive to the hero in light mode too. */
+:root[data-theme="light"] .hero {
+  background-image:
+    linear-gradient(rgba(234, 242, 248, 0.74), rgba(218, 234, 242, 0.84)),
+    url("./assets/images/hero-engineering-blueprint.png");
+}
+
 /* Keep the greeting smaller and aligned to the left edge of the hero. */
 .hero > .logo {
   align-self: flex-start;
   text-align: left;
-  font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
 }
 
 @media (max-width: 480px) {
@@ -720,5 +733,89 @@ body {
 
   footer div {
     flex-wrap: wrap;
+  }
+}
+
+/* Portfolio-sized typography and the contact-only social links. */
+.hero h1 { font-size: clamp(2rem, 4vw, 3.5rem); }
+.hero-description, .project-content p, .about-content p, .skills-grid p { font-size: 0.95rem; }
+.connect-area { margin-top: 28px; }
+.contact-social-links { margin-top: 16px; }
+/* Compact desktop scale: keeps headings and copy proportional on wide screens. */
+body {
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3vw, 2.6rem);
+}
+
+.section-label {
+  font-size: 0.82rem;
+}
+
+.skills-section h2,
+.projects-section h2,
+.about-content h2 {
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+}
+
+.hero > .logo {
+  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+}
+
+.nav-links a,
+.social-links a,
+.project-actions a,
+.project-actions button {
+  font-size: 0.9rem;
+}
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: clamp(1.9rem, 9vw, 2.7rem);
+  }
+}
+/* Reveal social links from the hero Connect with me button. */
+.connect-menu {
+  position: relative;
+  z-index: 5;
+  display: inline-block;
+  margin-top: 18px;
+}
+
+.connect-options {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  width: max-content;
+  max-width: min(92vw, 420px);
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--line);
+  background: rgba(6, 19, 31, 0.94);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, -8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.connect-menu:hover .connect-options,
+.connect-menu:focus-within .connect-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+:root[data-theme="light"] .connect-options {
+  background: rgba(249, 252, 255, 0.96);
+}
+
+@media (max-width: 480px) {
+  .connect-options {
+    flex-direction: column;
   }
 }
